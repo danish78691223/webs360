@@ -107,6 +107,7 @@ session_start();
       <a href="#">Flipkart</a>
       <a href="#">Air India</a>
       <a href="#">Shopsy</a>
+      <a href="#">Rahat Digital's</a>
     </div>
 
     <div class="footer-section">
@@ -164,7 +165,7 @@ session_start();
     <a href="#">Advertise</a>
     <a href="#">Gift Cards</a>
     <a href="#">Help Center</a>
-    <span>© 2007-2025 Flipkart.com</span>
+    <span>© 2024-2025 Web's 360.com</span>
 
     <div class="payment-icons">
       <img src="visa.png" alt="Visa">
