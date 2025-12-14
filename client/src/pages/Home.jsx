@@ -61,11 +61,12 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="service-card">
-            <h3>Business Websites</h3>
+          <div className="service-card"
+            onClick={() => window.location.href = "/dashboards"}
+          >
+            <h3>Dashboards</h3>
             <p>
-              Professional websites for businesses, startups, and service
-              providers to establish strong online presence.
+              Professional Dashboards for data visualization, analytics, and manage operations efficiently. and make track your Business growth.
             </p>
           </div>
 

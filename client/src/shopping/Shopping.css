@@ -1,34 +1,33 @@
-.services-page {
+.shopping-page {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 /* HERO */
-.services-hero {
+.shopping-hero {
   padding: 70px 20px;
-  background: linear-gradient(135deg, #1F2A33, #0F1720);
+  background: linear-gradient(135deg, #0F1720, #1F2A33);
   color: #ffffff;
   text-align: center;
 
-  /* animation */
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 0.9s ease forwards;
 }
 
-.services-hero h1 {
+.shopping-hero h1 {
   font-size: 38px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.services-hero p {
-  max-width: 750px;
+.shopping-hero p {
+  max-width: 720px;
   margin: auto;
   color: #CBD5E1;
   line-height: 1.6;
 }
 
-/* SERVICES LIST */
-.services-list {
+/* LIST */
+.shopping-list {
   max-width: 1100px;
   margin: 60px auto;
   padding: 0 20px;
@@ -37,8 +36,8 @@
   gap: 24px;
 }
 
-/* SERVICE BOX */
-.service-box {
+/* CARD */
+.shopping-card {
   background: #ffffff;
   padding: 26px;
   border-radius: 10px;
@@ -52,29 +51,23 @@
     border-color 0.35s ease;
 }
 
-/* Hover effect */
-.service-box:hover {
+.shopping-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 16px 32px rgba(31, 182, 213, 0.25);
   border-color: #1FB6D5;
 }
 
-.service-box h3 {
+.shopping-card h3 {
   margin-bottom: 10px;
   color: #1F2A33;
-  transition: color 0.3s ease;
 }
 
-.service-box:hover h3 {
-  color: #1FB6D5;
-}
-
-.service-box p {
+.shopping-card p {
   color: #64748B;
   line-height: 1.6;
 }
 
-/* Fade animation */
+/* Animation */
 @keyframes fadeUp {
   to {
     opacity: 1;

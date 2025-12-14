@@ -1,19 +1,45 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Header.css";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    toast.info("Logged out successfully");
+
+    toggleSidebar();
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 800);
+  };
+
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button className="close-btn" onClick={toggleSidebar}>× WEB'S 360</button>
+      <button className="close-btn" onClick={toggleSidebar}>
+        × WEB&apos;S 360
+      </button>
 
       <nav>
-        <a href="/">Home</a>
-        <a href="/services">Services</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/shopping">Shopping</a>
-        <a href="/entertainment">Entertainment</a>
-        <a href="/login">Login</a>
+        <Link to="/" onClick={toggleSidebar}>Home</Link>
+        <Link to="/services" onClick={toggleSidebar}>Services</Link>
+        <Link to="/about" onClick={toggleSidebar}>About</Link>
+        <Link to="/contact" onClick={toggleSidebar}>Contact</Link>
+        <Link to="/shopping" onClick={toggleSidebar}>Shopping</Link>
+        <Link to="/entertainment" onClick={toggleSidebar}>Entertainment</Link>
+
+        {/* AUTH BASED */}
+        {!user ? (
+          <Link to="/login" onClick={toggleSidebar}>Login</Link>
+        ) : (
+          <button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </button>
+        )}
       </nav>
     </div>
   );
