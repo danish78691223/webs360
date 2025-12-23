@@ -1,0 +1,169 @@
+/* =========================
+   LOGIN PAGE WRAPPER
+   ========================= */
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 16px 20px;
+  background: #0f172a;
+}
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #1f2a33;
+  padding: 36px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.login-title {
+  text-align: center;
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+
+/* =========================
+   INPUTS (IMPROVED UI)
+   ========================= */
+
+.login-input {
+  width: 100%;
+  height: 48px;
+  padding: 10 14px;
+  margin-bottom: 18px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.7)
+  );
+
+  color: #ffffff;
+  font-size: 15px;
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.25s ease;
+}
+
+/* Placeholder */
+.login-input::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+
+}
+
+/* Focus state */
+.login-input:focus {
+  outline: none;
+  border-color: #1fb6d5;
+
+  box-shadow:
+    0 0 0 3px rgba(31, 182, 213, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* Autofill fix (Chrome) */
+.login-input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #0f172a inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1fb6d5;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.login-btn:hover {
+  background: #17a2be;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =========================
+   LINK
+   ========================= */
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #1fb6d5;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Mobile (small devices) */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px 20px;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-card {
+    max-width: 380px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .login-card {
+    max-width: 440px;
+  }
+}

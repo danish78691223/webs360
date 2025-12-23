@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 
+import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -16,15 +17,13 @@ import TemplatePage from "./shopping/TemplatePage";
 import WebsiteTemplates from "./shopping/WebsiteTemplates";
 import Dashboards from "./dashboards/Dashboards";
 
-
-
-
 const App = () => {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -1,35 +1,84 @@
-/* HEADER */
+/* =========================
+   HEADER (STICKY / FIXED)
+   ========================= */
+
 .header {
   height: 64px;
   background: #1F2A33;
   display: flex;
   align-items: center;
-  padding: 0 16px;
   justify-content: space-between;
+  padding: 0 16px;
   color: #FFFFFF;
+
+  /* Sticky behavior */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  /* Ensure header stays above sidebar and content */
+  z-index: 1200;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.menu-btn {
-  width: 30px;
-  height: 24px;
+/* =========================
+   HEADER LEFT
+   ========================= */
+
+.header-left {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =========================
+   MENU BUTTON (HAMBURGER)
+   ========================= */
+
+.menu-btn {
+  width: 36px;
+  height: 36px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1FB6D5;
+  font-size: 28px;
+  line-height: 1;
+
+  padding: 0;
 }
 
+/* Hamburger lines */
 .menu-btn span {
+  display: block;
+  width: 22px;
   height: 3px;
-  width: 100%;
   background-color: #1FB6D5;
   border-radius: 2px;
-  display: block;
 }
 
+/* Stack hamburger */
+.menu-btn:not(.open) {
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Close icon state */
+.menu-btn.open {
+  font-size: 32px;
+}
+
+
+/* =========================
+   BRAND
+   ========================= */
 
 .brand-name {
   font-size: 22px;
@@ -37,22 +86,81 @@
   letter-spacing: 1px;
 }
 
-/* SIDEBAR */
+/* =========================
+   HEADER RIGHT
+   ========================= */
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   PROFILE / LOGIN
+   ========================= */
+/* =========================
+   PROFILE IMAGE
+   ========================= */
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* circular avatar */
+  border: 2px solid #1FB6D5;
+}
+
+
+.profile-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+.login-link {
+  text-decoration: none;
+  color: #1FB6D5;
+  font-size: 16px;
+  margin-right: 40px;
+}
+
+/* =========================
+   SIDEBAR (FIXED & ALIGNED)
+   ========================= */
+
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 64px; /* exactly header height */
   left: -300px;
   width: 260px;
-  height: 100vh;
+  height: calc(100vh - 64px);
   background: #1F2A33;
   padding: 20px;
-  transition: 0.3s ease-in-out;
-  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  z-index: 1100;
+
+  overflow-y: auto; /* ✅ proper scrolling */
 }
 
 .sidebar.open {
   left: 0;
 }
+
+
+/* =========================
+   SIDEBAR CONTENT
+   ========================= */
 
 .close-btn {
   background: none;
@@ -75,36 +183,9 @@
   color: #1FB6D5;
 }
 
-
-/* LEFT GROUP */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-/* Right section */
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-/* Profile icon */
-.profile-icon {
-  font-size: 22px;
-  text-decoration: none;
-  color: #1FB6D5;
-  cursor: pointer;
-}
-
-/* Login text (when not logged in) */
-.login-link {
-  text-decoration: none;
-  color: #1FB6D5;
-  font-size: 16px;
-}
-
-
+/* =========================
+   LOGOUT BUTTON
+   ========================= */
 
 .logout-btn {
   background: none;
@@ -119,4 +200,3 @@
 .logout-btn:hover {
   color: #EF4444;
 }
-

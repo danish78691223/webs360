@@ -1,19 +1,42 @@
 .home {
   font-family: Arial, Helvetica, sans-serif;
+  padding-top: 64px; /* space for fixed header */
 }
 
-/* HERO */
+/* =========================
+   REVEAL ANIMATION SYSTEM
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    transform 600ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 120ms; }
+.delay-2 { transition-delay: 240ms; }
+.delay-3 { transition-delay: 360ms; }
+.delay-4 { transition-delay: 480ms; }
+
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
   padding: 80px 20px;
   background-image: url("../assets/images/hero-bg.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
-  position: relative;
 }
-
 
 .hero h1 {
   font-size: 40px;
@@ -33,40 +56,51 @@
   gap: 16px;
 }
 
-.primary-btn {
-  background: #1FB6D5;
-  border: none;
+/* =========================
+   BUTTONS
+   ========================= */
+
+.primary-btn,
+.secondary-btn {
   padding: 12px 28px;
-  color: #fff;
   font-size: 16px;
-  cursor: pointer;
   border-radius: 4px;
   text-decoration: none;
-  display: inline-block;
-  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.primary-btn {
+  background: #1fb6d5;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: #0ea5c6;
+  transform: translateY(-1px);
 }
 
 .secondary-btn {
   background: transparent;
-  border: 1px solid #1FB6D5;
-  padding: 12px 28px;
-  color: #1FB6D5;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
+  border: 1px solid #1fb6d5;
+  color: #1fb6d5;
 }
 
-/* ABOUT */
-/* ABOUT */
+.secondary-btn:hover {
+  background: rgba(31, 182, 213, 0.1);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   ABOUT
+   ========================= */
+
 .about {
   padding: 60px 20px;
   text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.9s ease forwards;
 }
 
 .about h2 {
@@ -81,19 +115,13 @@
   line-height: 1.7;
 }
 
-/* Fade + slide animation */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* =========================
+   SERVICES
+   ========================= */
 
-
-/* SERVICES */
 .services {
   padding: 60px 20px;
-  background: #F8FAFC;
+  background: #f8fafc;
 }
 
 .services h2 {
@@ -114,50 +142,27 @@
   background: #ffffff;
   padding: 24px;
   border-radius: 8px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: 
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
   border: 1px solid transparent;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   cursor: pointer;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
 }
 
-/* Hover effect */
 .service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(31, 182, 213, 0.25);
-  border-color: #1FB6D5;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(31, 182, 213, 0.22);
+  border-color: #1fb6d5;
 }
 
 .service-card h3 {
   margin-bottom: 10px;
-  color: #1F2A33;
-  transition: color 0.3s ease;
-}
-
-.service-card:hover h3 {
-  color: #1FB6D5;
+  color: #1f2a33;
 }
 
 .service-card p {
-  color: #64748B;
+  color: #64748b;
   line-height: 1.6;
-}
-
-
-
-.primary-btn,
-.secondary-btn {
-  transition: all 0.3s ease;
-}
-
-.primary-btn:hover {
-  background: #0ea5c6;
-  transform: translateY(-2px);
-}
-
-.secondary-btn:hover {
-  background: rgba(31, 182, 213, 0.1);
-  transform: translateY(-2px);
 }

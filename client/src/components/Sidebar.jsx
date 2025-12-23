@@ -20,10 +20,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <button className="close-btn" onClick={toggleSidebar}>
-        × WEB&apos;S 360
-      </button>
-
       <nav>
         <Link to="/" onClick={toggleSidebar}>Home</Link>
         <Link to="/services" onClick={toggleSidebar}>Services</Link>
